@@ -41,5 +41,34 @@
             <li class="breadcrumb-item active" aria-current="page">Consultas</li>
         </ol>
     </nav>
-    <h4 class="xd"><span>Consultas</span></h4>
+    <h4 class="xd"><span>Mis Consultas</span></h4>
+    <br>
+    <table class="table table-striped">
+        <tr>
+            <td>Id Consulta</td>
+            <td>Paciente</td>
+            <td>Motivo</td>
+            <td>Fecha</td>
+            <td>Enfermera</td>
+            <td>Presión Arterial</td>
+            <td>Ritmo Cardiaco</td>
+            <td>Altura</td>
+            <td>Peso</td>
+            <td>Receta</td>
+            <td>Nota Médica</td>
+        </tr>
+        <tr ng-repeat="consulta in Consultas" ng-modal="Pacientes">
+            <td>{{$index+1}}</td>
+            <td>{{Pacientes.nombre}}</td>
+            <td>{{consulta.motivo}}</td>
+            <td>{{consulta.fecha}}</td>
+            <td>{{consulta.idEnf}}</td>
+            <td>{{consulta.presion}} mmHg</td>
+            <td>{{consulta.ritmoCar}} BPM</td>
+            <td>{{consulta.altura}} CM</td>
+            <td>{{consulta.peso}} KG</td>
+            <td>{{consulta.receta}}</td>
+            <td>{{consulta.notaMed}}</td>
+        </tr>
+    </table>
 </article>

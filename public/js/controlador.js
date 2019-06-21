@@ -402,6 +402,21 @@ app.controller('misConsultas', function($scope, $location, $http) {
         $location.path('/');
     }
 
+    $http({
+        url: 'recuperarConsultas',
+        method: 'GET',
+        params: {
+            idMed: JSON.parse(sessionStorage.getItem('user')).idMed
+        }
+    }).then(function successCallback(response) {
+        console.log(JSON.stringify(response.data.pacientes));
+        console.log("----------------------------------------")
+        console.log(JSON.stringify(response.data.consultas));
+        $scope.Consultas = response.data.consultas;
+        $scope.Pacientes = response.data.pacientes;
+    });
+
+
     $scope.cerrar = function() {
         var correo = (JSON.parse(sessionStorage.getItem("user"))).correo;
         console.log(data);
@@ -416,6 +431,7 @@ app.controller('misConsultas', function($scope, $location, $http) {
                 alert(JSON.stringify(response.data));
             }, function(response) {
                 alert(JSON.stringify(response.data));
+
             });
     }
 });

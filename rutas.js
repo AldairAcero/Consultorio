@@ -24,6 +24,20 @@ module.exports = app => {
         console.log(user.idMed);
     });
 
+
+    app.get('/recuperarConsultas', async(req, res) => {
+        console.log(req.query);
+        var consultas = await pool.query('select * from consultas where idMed = ?', req.query.idMed);
+        console.log(consultas[0].idPac);
+        var pacientes = await pool.query('select * from pacientes where idPac = ?', consultas[0].idPac);
+
+        if (!consultas[0]) {
+            res.status(400).send({ menssage: "Error en la consulta" });
+        } else {
+            res.status(200).send({ mensaje: "Consulta chida", consultas: consultas, pacientes: pacientes[0] });
+        }
+    });
+
     //******************** POST *****************************************
 
     app.post('/registroMed', async(req, res) => {
