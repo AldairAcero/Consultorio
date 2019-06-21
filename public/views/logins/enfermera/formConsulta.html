@@ -24,5 +24,82 @@
             </div>
         </div>
         <hr id="enf">
+        <h3>Formulario antes de la consulta</h3>
+        <form name="consulta" method="POST" novalidate>
+            <!-- ID Paciente -->
+            <div class="input-group mb-3 flex-nowrap">
+                <div class="input-group-prepend">
+                    <span class="input-group-text "></span>
+                </div>
+                <input type="number" name="id" ng-model="idPac" class="form-control" placeholder="Id Paciente" title="ID" ng-required="true">
+                <b class="text-danger mr-2 mt-2 ml-2">*</b>
+                <div ng-show="registroPaciente.nombre.$touched && registroPaciente.nombre.$invalid">
+                    <small class="text-sm-center text-danger">&emsp; Ingresa un valor valido.</small>
+                </div>
+            </div>
+
+            <!-- FECHA DE NACIMIENTO -->
+            <div class="input-group mb-3 flex-nowrap">
+                <div class="input-group-prepend">
+                    <span class="input-group-text "></span>
+                </div>
+                <input type="date" name="fechaNac" ng-model="fecha" class="form-control" placeholder="Fecha" ng-required="true">
+                <b class="text-danger mr-2 mt-2 ml-2">*</b>
+            </div>
+
+            <!-- PRESION -->
+            <div class="input-group mb-3 flex-nowrap">
+                <div class="input-group-prepend">
+                    <span class="input-group-text "></span>
+                </div>
+                <input type="number" name="presion" ng-model="presion" class="form-control" placeholder="Presión arterial" title="Presión arterial" ng-required="true">
+                <b class="text-danger mr-2 mt-2 ml-2">*</b>
+                <div ng-show="registroPaciente.nombre.$touched && registroPaciente.nombre.$invalid">
+                    <small class="text-sm-center text-danger">&emsp; Ingresa un valor valido.</small>
+                </div>
+            </div>
+
+            <!-- RITMO CARDIACO -->
+            <div class="input-group mb-3 flex-nowrap">
+                <div class="input-group-prepend">
+                    <span class="input-group-text "></span>
+                </div>
+                <input type="text" name="ritmo" ng-model="ritmo" class="form-control" placeholder="Ritmo cardiaco" title="Ritmo cardiaco" ng-required="true">
+                <b class="text-danger mr-2 mt-2 ml-2">*</b>
+                <div ng-show="registroPaciente.nombre.$touched && registroPaciente.nombre.$invalid">
+                    <small class="text-sm-center text-danger">&emsp; Ingresa un valor válido.</small>
+                </div>
+            </div>
+
+            <!-- ALTURA -->
+            <div class="input-group mb-3 flex-nowrap">
+                <div class="input-group-prepend">
+                    <i class="input-group-text "></i>
+                </div>
+                <input type="text" name="altura" ng-model="altura" class="form-control" placeholder="Altura" title="Altura" ng-required="true">
+                <b class="text-danger mr-2 mt-2 ml-2">*</b>
+                <div ng-show="registroPaciente.nombre.$touched && registroPaciente.nombre.$invalid">
+                    <small class="text-sm-center text-danger">&emsp; Ingresa un nombre válido.</small>
+                </div>
+            </div>
+
+            <!-- PESO -->
+            <div class="input-group mb-3 flex-nowrap">
+                <div class="input-group-prepend">
+                    <span class="input-group-text "></span>
+                </div>
+                <input type="text" name="nombre" ng-model="peso" class="form-control" placeholder="Peso" title="Peso" ng-required="true">
+                <b class="text-danger mr-2 mt-2 ml-2">*</b>
+                <div ng-show="registroPaciente.nombre.$touched && registroPaciente.nombre.$invalid">
+                    <small class="text-sm-center text-danger">&emsp; Ingresa un nombre válido.</small>
+                </div>
+            </div>
+
+            <center>
+                <input ng-click="enviarForm()" type="submit" value="Registrar" class="btn btn-info" ng-disabled="registroPaciente.$invalid">
+            </center>
+            <br>
+        </form>
+
     </div>
 </nav>

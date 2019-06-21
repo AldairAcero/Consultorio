@@ -1,5 +1,55 @@
 /* ----------------------------------- ROUTING -----------------------------------*/
 var app = angular.module("myApp", ["ngRoute"]);
+
+app.factory('Shared', function() {
+    return {
+        rol: ""
+    };
+});
+
+//Factory Socket.io
+app.factory('socket', function($rootScope) {
+    var socket = io.connect();
+    return {
+        on: function(eventName, callback) {
+            socket.on(eventName, function() {
+                var args = arguments;
+                $rootScope.$apply(function() {
+                    callback.apply(socket, args);
+                });
+            });
+        },
+        emit: function(eventName, data, callback) {
+            socket.emit(eventName, data, function() {
+                var args = arguments;
+                $rootScope.$apply(function() {
+                    if (callback) {
+                        callback.apply(socket, args);
+                    }
+                });
+            })
+        }
+    };
+});
+
+//Facotory Peer
+app.factory("PeerData", function() {
+    return {
+        data: "",
+        consulta: ""
+    };
+});
+
+app.factory("Consulta", function() {
+    return {
+        signos: "",
+        idEnf: "",
+        idPac: "",
+        idMed: ""
+    }
+});
+
+
 app.config(function($routeProvider) {
     $routeProvider
         .when("/", {
@@ -73,7 +123,11 @@ app.config(function($routeProvider) {
         })
         .when("/salaEnf", {
             templateUrl: "../views/logins/enfermera/formConsulta.html",
-            controller: "salaEnf"
+            controller: "formConsulta"
+        })
+        .when("/salaEnfermera", {
+            templateUrl: "../views/logins/enfermera/enfermera.html",
+            controller: "sala-Enf"
         })
         /* -------------------------PÁGINAS DEL ADMINISTRADOR---------------------------------- 
         .when("/admin", {
@@ -457,7 +511,7 @@ app.controller('registroEnf', function($scope, $location, $http) {
 /* ------------------------------ PÁGINAS DE LA ENFERMERA -----------------------------*/
 
 app.controller('indexEnf', function($scope, $location) {
-    console.log("inicio controlador index");
+    console.log("inicio controlador index enfermera");
     if (JSON.parse(sessionStorage.getItem('user'))) {
         document.getElementById('cabecera').style.display = "none";
         console.log(JSON.parse(sessionStorage.getItem('user')).nombre);
@@ -476,7 +530,7 @@ app.controller('indexEnf', function($scope, $location) {
 
 });
 
-app.controller('salaEnf', function($scope, $location) {
+app.controller('formConsulta', function($scope, $location, Consulta) {
     console.log("inicio controlador index");
     if (JSON.parse(sessionStorage.getItem('user'))) {
         document.getElementById('cabecera').style.display = "none";
@@ -484,6 +538,28 @@ app.controller('salaEnf', function($scope, $location) {
         $scope.enfermera = JSON.parse(sessionStorage.getItem('user')).nombre;
     } else {
         $location.path('/');
+    }
+
+    $scope.enviarForm = function() {
+        var idPac = $scope.idPac;
+        var fecha = $scope.fecha;
+        var presion = $scope.presion;
+        var altura = $scope.altura;
+        var peso = $scope.peso;
+
+        var signos = {
+            fecha: fecha,
+            presion: presion,
+            altura: altura,
+            peso: peso
+        };
+
+        var idEnf = JSON.parse(sessionStorage.getItem("user")).idEnf;
+        console.log(idEnf, signos);
+        Consulta.signos = signos;
+        Consulta.idEnf = idEnf;
+        Consulta.idPac = idPac;
+        $location.path("/salaEnf");
     }
 
     $scope.cerrar = function() {
