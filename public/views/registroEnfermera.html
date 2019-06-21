@@ -1,0 +1,75 @@
+<nav>
+    <ul id="navigation">
+        <li class="home">
+            <a href="#!indexMed" title="Inicio"><i class="fa fa-home fa-4x ml-3" aria-hidden="true"></i></a>
+        </li>
+        <li class="sala">
+            <a href="#!consulta" title="Sala de Consultas"><i class="fa fa-heartbeat fa-4x ml-3" aria-hidden="true"></i></a>
+        </li>
+        <li class="consultas">
+            <a href="#!misCons" title="Mis Consultas"><i class="fa fa-clipboard fa-3x ml-3 mt-2" aria-hidden="true"></i></a>
+        </li>
+        <li class="estadisticas">
+            <a href="#!statistics" title="Estadísticas"><i class="fa fa-table fa-3x ml-3 mt-2" aria-hidden="true"></i></a>
+        </li>
+        <li class="regisEnf">
+            <a href="#!regisEnfermera" title="Registrar Enfermera"><i class="fa fa-user-plus fa-3x ml-3 mt-2" aria-hidden="true"></i></a>
+        </li>
+        <li class="logOut">
+            <a href="#!indexMed" title="Cerrar Sesión"><i class="fa fa-sign-out fa-4x ml-3" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+    <!-- Logo y el nombre del médico -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="#!/indexMed" class="logo ">
+                    <img src="/images/logo-consultorio-medico.png" alt="logo" class="mt-1">
+                </a>
+            </div>
+            <div class="col">
+                <h6 class="text-sm-right mt-4 fixed"><i class="fa fa-user-md fa-2x mr-2"></i>Bienvenido <b>{{medico}}</b></h6>
+            </div>
+        </div>
+        <hr>
+    </div>
+</nav>
+<nav aria-label="breadcrumb" class="container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#!/indexMed">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Registro Enfermera</li>
+    </ol>
+</nav>
+<!-- Correo, Contraseña -->
+<center>
+    <div class="form-group col-md-6 ">
+        <section class="container" ng-controller="registroMed">
+            <form name="registroEnfermera" method="POST" ng-submit="registrarEnf()" novalidate>
+                <!-- NOMBRE -->
+                <div class="input-group mb-3 flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fa fa-user"></span>
+                    </div>
+                    <input type="text" name="nombreEnf" ng-model="enfermera.nombre" class="form-control" placeholder="Nombre" title="Introduce tu nombre" ng-required="true">
+                    <div ng-show="registroEnfermera.nombreEnf.$touched && registroEnfermera.nombreEnf.$invalid">
+                        <small class="text-sm-center">&emsp; Ingresa un nombre válido.</small>
+                    </div>
+                </div>
+                <!-- CORREO -->
+                <div class="input-group mb-3 flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fa fa-at"></span>
+                    </div>
+                    <input type="email" name="emailEnf" ng-model="enfermera.email" class="form-control" placeholder="Email" title="Introduce tu correo"><br>
+                    <div ng-show="registroEnfermera.emailEnf.$touched && registroEnfermera.emailEnf.$invalid">
+                        <small class="text-sm-center">&emsp; Ingresa un correo válido.</small>
+                    </div>
+                </div>
+                <center>
+                    <input type="submit" value="Registrar" class="btn btn-info" ng-disabled="registroEnfermera.$invalid">
+                </center>
+            </form>
+        </section>
+    </div>
+    <div class="divider"></div>
+</center>

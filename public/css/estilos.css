@@ -1,0 +1,500 @@
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #111111;
+    background-color: #fdfdfd;
+}
+
+.bienvenidos {
+    background: url("../images/fondo-encabezado.jpg") no-repeat center top;
+    color: #fff;
+    background-size: cover;
+    background-attachment: fixed !important;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado {
+    background: #edf9ff;
+    color: #000;
+    padding: .5rem 0;
+    transition: all .5s ease;
+}
+
+.encabezado.fondo-menu {
+    background: #5BC0DE;
+    padding: 1rem 0;
+}
+
+.encabezado .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.encabezado .logo img {
+    width: 300px;
+    height: auto;
+}
+
+
+/* Para el menú principal */
+
+#menu-principal {
+    flex: 1 1 100%;
+}
+
+#menu-principal ul {
+    padding: 0;
+    list-style: none;
+    margin: 1rem 0 0 0;
+}
+
+#menu-principal ul a {
+    display: block;
+    padding: .8rem 0;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    border-top: 1px solid #8c8888;
+    text-decoration: none;
+}
+
+#menu-principal ul a:hover,
+#menu-principal ul li.active a {
+    color: rgb(16, 117, 117);
+}
+
+.texto-encabezado {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+.texto-encabezado .display-4 {
+    margin-top: 4rem;
+}
+
+.texto-encabezado .btn-primary {
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #12AFAF;
+    border-color: transparent;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.flecha-bajar a {
+    display: inline-block;
+    color: #fff;
+    font-size: 4rem;
+    animation: flecha-animada 2s ease-in-out infinite;
+    /*en la linea anterior se asigna la animacion a la flecha*/
+}
+
+
+/* animación para la flechita */
+
+@keyframes flecha-animada {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(6px);
+    }
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+ul li {
+    list-style: none;
+}
+
+
+/*-------------------------
+    SECCIÓN CONSULTORIO
+---------------------------*/
+
+.consultorio {
+    background: rgb(54, 163, 196);
+    color: #fff;
+}
+
+.consultorio img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+
+/*----------------------
+    SECCION SERVICIOS
+------------------------*/
+
+.servicios {
+    background: url("../images/fondo-servicios.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed !important;
+    color: #fff;
+}
+
+.servicios article {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.servicios img {
+    flex: 0 0 160px;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.servicios h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    flex: 1 1 auto;
+}
+
+.servicios h3 a {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.servicios h3 a::after {
+    content: "\f054";
+    font-family: FontAwesome;
+    font-size: 2rem;
+    margin-left: 1rem;
+    opacity: .5;
+    position: relative;
+    left: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.servicios h3 a:hover::after {
+    left: -.5rem;
+    opacity: 1;
+    color: #12AFAF;
+}
+
+
+/*-----------------------------
+    SECCION LOGIN Y REGISTROS
+------------------------------*/
+
+.registros {
+    background: url("../images/fondo-login.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed !important;
+    color: #fff;
+}
+
+.registros article {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.registros img {
+    flex: 0 0 160px;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.registros h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    flex: 1 1 auto;
+}
+
+.registros h3 a {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+}
+
+.registros h3 a::after {
+    content: "\f054";
+    font-family: FontAwesome;
+    font-size: 2rem;
+    margin-left: 1rem;
+    opacity: .5;
+    position: relative;
+    left: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.registros h3 a:hover::after {
+    left: -.5rem;
+    opacity: 1;
+    color: #12AFAF;
+}
+
+
+/*---------------------------
+    FORMULARIOS DE REGISTRO
+-----------------------------*/
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+input[disabled="disabled"] {
+    opacity: 0.4;
+    cursor: not-allowed !important;
+}
+
+
+/*---------------------------
+    SECCION PIE DE PAGINA
+-----------------------------*/
+
+.piedepagina {
+    background: #e4e4e4;
+    color: #000;
+    text-align: center;
+    font-size: .9rem;
+}
+
+.piedepagina .redes-sociales {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.piedepagina .redes-sociales a {
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    margin: 0 .5rem;
+    opacity: .7;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+
+.piedepagina .redes-sociales a:hover #face {
+    opacity: 1;
+    color: rgb(14, 29, 165);
+    transition: all .5s ease-in-out;
+}
+
+.piedepagina .redes-sociales a:hover #tweet {
+    opacity: 1;
+    color: rgb(59, 153, 216);
+    transition: all .5s ease-in-out;
+}
+
+.piedepagina .redes-sociales a:hover #instagram {
+    opacity: 1;
+    color: rgb(240, 120, 210);
+    transition: all .5s ease-in-out;
+}
+
+
+/* DISEÑO PARA LA FLECHA QUE TE MANDA HASTA ARRIBA */
+
+.ir-arriba {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: #0a7272;
+    text-decoration: none;
+    z-index: 99999;
+    line-height: 0;
+    display: none;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.ir-arriba:hover,
+.ir-arriba:focus {
+    outline: 0;
+    text-decoration: none;
+    color: rgb(127, 215, 218);
+}
+
+
+/*---------------------
+    MEDIAS QUERIES
+-----------------------*/
+
+@media (min-width: 768px) {
+    #menu-principal {
+        height: auto !important;
+        display: block;
+        flex: 0 1 auto;
+        margin-left: auto;
+        order: 1;
+    }
+    #menu-principal ul {
+        display: flex;
+        margin: 0;
+    }
+    #menu-principal ul li a {
+        padding: .8rem;
+        text-transform: capitalize;
+        margin: 0 .3rem;
+        border-top: 0px;
+        border-bottom: 4px solid transparent;
+        transition: all .5s ease;
+    }
+    #menu-principal ul li:active a,
+    #menu-principal ul li a:hover {
+        color: #12afaf;
+        border-bottom: 4px solid;
+    }
+    .servicios article {
+        margin: 1rem 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .servicios img {
+        flex: 0 0 160px;
+        overflow: hidden;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        transition: all 1s ease;
+    }
+    .servicios article:hover img {
+        transform: rotateY(360deg);
+        transform-style: preserve-3d;
+    }
+    .servicios h3 a::after {
+        content: "";
+    }
+    .servicios h3 {
+        margin: 0 0 .5rem 0;
+        font-size: 1.5rem;
+        flex: 0 1 auto;
+        width: 100%;
+    }
+    .servicios h3 a {
+        display: block;
+        width: 100%;
+    }
+    .servicios p {
+        width: 100%;
+    }
+    .servicios .btn-secondary {
+        margin-top: auto;
+    }
+    /* Para la sección de registros es igual, sólo cambian unas cosas */
+    .registros article {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .registros img {
+        flex: 0 0 160px;
+        overflow: hidden;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        transition: all 1s ease;
+    }
+    .registros article:hover img {
+        transform: rotateY(360deg);
+        transform-style: preserve-3d;
+    }
+    .registros h3 a::after {
+        content: "";
+    }
+    .registros h3 {
+        margin: 0 0 .5rem 0;
+        font-size: 1.5rem;
+        flex: 0 1 auto;
+        width: 100%;
+    }
+    .registros h3 a {
+        display: block;
+        width: 100%;
+    }
+    .registros p {
+        width: 100%;
+    }
+    .servicios .btn-secondary {
+        margin-top: auto;
+    }
+    @media (min-width: 992px) {
+        html {
+            font-size: 16px;
+        }
+        .bienvenidos {
+            background: url("../images/fondo-encabezado-grande.jpg") no-repeat center top;
+            background-size: cover;
+        }
+        .servicios {
+            background: url("../images/fondo-servicios-grande.jpg") no-repeat center center;
+            background-size: cover;
+        }
+        .registros {
+            background: url("../images/fondo-login-grande.jpg") no-repeat center center;
+            background-size: cover;
+        }
+    }
+}
+
+
+/* ESTILOS EXTRA */
+
+.xd {
+    color: #111;
+    display: block;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.xd:before {
+    border-top: 1px solid rgb(187, 187, 187);
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.xd span {
+    background: #fdfdfd;
+    padding: 0 10px;
+}
+
+.divider {
+    margin-top: 15px;
+    height: 54px;
+    background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .14), rgba(0, 0, 0, .03) 3px, transparent);
+    z-index: 0;
+    zoom: 1;
+}
+
+.divider:after {
+    display: block;
+    width: 100%;
+    height: 54px;
+    background-color: transparent;
+    background: -webkit-linear-gradient(to right, #fff, rgba(255, 255, 255, 0), #fff);
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0), #fff);
+    z-index: 1;
+    content: "";
+}

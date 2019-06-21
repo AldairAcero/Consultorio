@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Consultorio Médico | Diagnósticos Online </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos-logins.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body ng-app="myApp" id="encabezado">
+    <nav class="encabezado navbar navbar-expand-lg sticky-top" role="banner" id="cabecera">
+        <div class="container">
+            <a href="#!/" class="logo">
+                <img src="images/logo-consultorio-medico.png" alt="logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-principal" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="menu-principal">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#!/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!about">Acerca De...</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ROUTING -->
+    <div id="main">
+        <div ng-view></div>
+    </div>
+    <footer class="piedepagina py-1" role="contentinfo">
+        <p>2019 © Consultorio-Médico. Todos los derechos reservados.</p>
+        <div class="container">
+            <ul class="redes-sociales">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true" id="face"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true" id="tweet"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true" id="instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <a data-scroll class="ir-arriba" href="#encabezado"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+    <!--Scripts-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/sitio.js"></script>
+    <script src="js/controlador.js"></script>
+</body>
+
+</html>

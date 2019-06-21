@@ -1,0 +1,178 @@
+/*---------------------------------------------
+    BARRA DE NAVEGACIÓN LATERAL PARA EL MÉDICO
+-----------------------------------------------*/
+
+ul#navigation {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 50px;
+    left: 0px;
+    list-style: none;
+    z-index: 9999;
+}
+
+ul#navigation li {
+    width: 100px;
+}
+
+ul#navigation li a {
+    display: block;
+    margin-left: -81px;
+    width: 100px;
+    height: 70px;
+    background-color: #CFCFCF;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid #AFAFAF;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
+    opacity: 0.6;
+    box-shadow: 0px 4px 3px #000;
+    transition: .3s ease-in;
+    color: #000;
+}
+
+ul#navigation li a:hover {
+    margin-left: -2px;
+    transition: .3s ease-out;
+}
+
+
+/*------------------------------------------------
+    BARRA DE NAVEGACIÓN LATERAL PARA LA ENFERMERA
+--------------------------------------------------*/
+
+ul#navigationE {
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    top: 50px;
+    left: 0px;
+    list-style: none;
+    z-index: 9999;
+}
+
+ul#navigationE li {
+    width: 100px;
+}
+
+ul#navigationE li a {
+    display: block;
+    margin-left: -81px;
+    width: 100px;
+    height: 70px;
+    background-color: rgb(248, 178, 213);
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid rgb(168, 2, 85);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-radius: 0px 10px 10px 0px;
+    opacity: 0.6;
+    box-shadow: 0px 4px 3px #000;
+    transition: .3s ease-in;
+    color: #000;
+}
+
+ul#navigationE li a:hover {
+    margin-left: -2px;
+    transition: .3s ease-out;
+}
+
+#enf {
+    border: 1.5px solid rgb(230, 112, 180);
+}
+
+hr {
+    border: 1.5px solid rgb(22, 184, 221);
+}
+
+
+/* Agregar medias queries por si se usa en celular (agregar al final) */
+
+
+/*----------------------------------------
+    BARRA DE NAVEGACIÓN DEL ADMINISTRADOR
+------------------------------------------
+
+.admin {
+    background: #949494;
+    color: #000;
+    padding: .5rem 0;
+    transition: all .5s ease;
+}
+
+.admin.fondo-menu {
+    background: #dddddd;
+    padding: 1rem 0;
+}
+
+.admin .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.admin .logo img {
+    width: 300px;
+    height: auto;
+}
+
+#menu-admin {
+    flex: 1 1 100%;
+}
+
+#menu-admin ul {
+    padding: 0;
+    list-style: none;
+    margin: 1rem 0 0 0;
+}
+
+#menu-admin ul a {
+    display: block;
+    padding: .8rem 0;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    border-top: 1px solid #8c8888;
+    text-decoration: none;
+}
+
+#menu-admin ul a:hover,
+#menu-admin ul li.active a {
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    #menu-admin {
+        height: auto !important;
+        display: block;
+        flex: 0 1 auto;
+        margin-left: auto;
+        order: 1;
+    }
+    #menu-admin ul {
+        display: flex;
+        margin: 0;
+    }
+    #menu-admin ul li a {
+        padding: .8rem;
+        text-transform: capitalize;
+        margin: 0 .3rem;
+        border-top: 0px;
+        border-bottom: 4px solid transparent;
+        transition: all .5s ease;
+    }
+    #menu-admin ul li:active a,
+    #menu-admin ul li a:hover {
+        color: #ffffff;
+        border-bottom: 4px solid;
+    }
+}*/
+
+#medico {
+    width: 50%;
+    height: 100%;
+}
