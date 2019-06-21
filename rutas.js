@@ -141,4 +141,48 @@ module.exports = app => {
         }
     });
 
+    //------------------------------Registro Enfermera-----------------------------------------
+
+    app.post('/registroEnf', async(req, res) => {
+
+        const { correo, contra, nombre } = req.body;
+        var ingreso = await pool.query('SELECT * FROM enfermeras where correo = ?', correo);
+        if (ingreso[0]) { //--------------------Verificar si el correo no se repite en la base de datos------------------
+            res.status(401).send({
+                message: "Registro invalido, correo ocupado, intente de nuevo"
+            });
+        } else {
+            await pool.query('INSERT INTO enfermeras SET ? ', {
+                correo,
+                contra,
+                nombre
+            });
+            res.status(200).send({
+                message: "Registro realizado"
+            });
+        }
+
+    });
+
+    //-----------------------------------Cerrar Sesion------------------------------------------
+
+    app.post('/cerrar', async(req, res) => {
+
+        const correo = req.body.correo;
+        console.log("resultado request: ", correo);
+        var ingreso = await pool.query('SELECT * FROM medicos where correo = ?', correo);
+        console.log("resultado consulta: ", ingreso[0]);
+        if (!ingreso[0]) { //--------------------Verificar si el correo no se repite en la base de datos------------------
+            res.status(401).send({
+                message: "error en base de datos :("
+            });
+        } else {
+            await pool.query('UPDATE medicos SET activo=0 where correo = ?', correo);
+            res.status(200).send({
+                message: "Cierre con exito"
+            });
+        }
+
+    });
+
 };

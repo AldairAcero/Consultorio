@@ -16,7 +16,7 @@
             <a href="#!regisEnfermera" title="Registrar Enfermera"><i class="fa fa-user-plus fa-3x ml-3 mt-2" aria-hidden="true"></i></a>
         </li>
         <li class="logOut">
-            <a href="#!indexMed" title="Cerrar Sesión"><i class="fa fa-sign-out fa-4x ml-3" aria-hidden="true"></i></a>
+            <a ng-click="cerrar()" href="#" title="Cerrar Sesión"><i class="fa fa-sign-out fa-4x ml-3" aria-hidden="true"></i></a>
         </li>
     </ul>
     <!-- Logo y el nombre del médico -->
@@ -43,14 +43,14 @@
 <!-- Correo, Contraseña -->
 <center>
     <div class="form-group col-md-6 ">
-        <section class="container" ng-controller="registroMed">
-            <form name="registroEnfermera" method="POST" ng-submit="registrarEnf()" novalidate>
+        <section class="container">
+            <form name="registroEnfermera" method="POST" novalidate>
                 <!-- NOMBRE -->
                 <div class="input-group mb-3 flex-nowrap">
                     <div class="input-group-prepend">
                         <span class="input-group-text fa fa-user"></span>
                     </div>
-                    <input type="text" name="nombreEnf" ng-model="enfermera.nombre" class="form-control" placeholder="Nombre" title="Introduce tu nombre" ng-required="true">
+                    <input type="text" name="nombreEnf" ng-model="nombre" class="form-control" placeholder="Nombre" title="Introduce tu nombre" ng-required="true">
                     <div ng-show="registroEnfermera.nombreEnf.$touched && registroEnfermera.nombreEnf.$invalid">
                         <small class="text-sm-center">&emsp; Ingresa un nombre válido.</small>
                     </div>
@@ -60,13 +60,23 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text fa fa-at"></span>
                     </div>
-                    <input type="email" name="emailEnf" ng-model="enfermera.email" class="form-control" placeholder="Email" title="Introduce tu correo"><br>
+                    <input type="email" name="emailEnf" ng-model="correo" class="form-control" placeholder="Correo" title="Introduce tu correo"><br>
                     <div ng-show="registroEnfermera.emailEnf.$touched && registroEnfermera.emailEnf.$invalid">
                         <small class="text-sm-center">&emsp; Ingresa un correo válido.</small>
                     </div>
                 </div>
+                <!-- CONTRA -->
+                <div class="input-group mb-3 flex-nowrap">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text fa fa-user"></span>
+                    </div>
+                    <input type="password" name="contraEnf" ng-model="contra" class="form-control" placeholder="Contraseña" title="Introduce tu Contraseña" ng-required="true">
+                    <div ng-show="registroEnfermera.contraEnf.$touched && registroEnfermera.contraEnf.$invalid">
+                        <small class="text-sm-center">&emsp; Ingresa un contraseña valida.</small>
+                    </div>
+                </div>
                 <center>
-                    <input type="submit" value="Registrar" class="btn btn-info" ng-disabled="registroEnfermera.$invalid">
+                    <input type="submit" value="Registrar" class="btn btn-info" ng-click="registrar()">
                 </center>
             </form>
         </section>
